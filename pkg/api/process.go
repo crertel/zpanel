@@ -28,8 +28,7 @@ func init() {
 
 func rehydrateProcs(procs []*process.Process) []Process {
 	ret := make([]Process, len(procs))
-	for i := 0; i < len(procs); i++ {
-		proc := *procs[i]
+	for i, proc := range procs {
 		cmd, _ := proc.Cmdline()
 		ppid, _ := proc.Ppid()
 		status, _ := proc.Status()
