@@ -44,6 +44,7 @@ func init() {
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/heartbeat", api.HeartbeatHandler)
+	r.HandleFunc("/fstab", api.FstabHandler)
 
 	srv := &http.Server{
 		Handler:      r,
